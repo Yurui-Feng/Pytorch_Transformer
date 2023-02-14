@@ -1,4 +1,4 @@
-name: dsci572
+name: transformer_torch
 channels:
   - pytorch
   - nvidia
