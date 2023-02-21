@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: transformer
+=======
+name: transformer_torch
+>>>>>>> 259dae85273075d92e9e6e37bfe69e54d198e61e
 channels:
   - conda-forge
   - defaults
