@@ -7,13 +7,13 @@ The codes are written following this [tutorial](https://youtu.be/U0s0f995w14)
 
 In the multi-headed attention mechanism of the Transformer, the query, key, and value vectors are all multi-dimensional tensors, where the dimensionality is determined by the model hyperparameters. Let's denote the dimensionality of the query, key, and value vectors as $d_q$, $d_k$, and $d_v$, respectively.
 
-Suppose we have h attention heads, which means that we have h sets of learnable parameters for the query, key, and value projection matrices, denoted as $W_q^i$`, $W_k^i$, and $W_v^i$ for the i-th head. These projection matrices are used to project the input sequence into h different subspaces. Then, for each head i, we can compute the attention weights and output as follows:
+Suppose we have h attention heads, which means that we have h sets of learnable parameters for the query, key, and value projection matrices, denoted as $W_q^i$, $W_k^i$, and $W_v^i$ for the i-th head. These projection matrices are used to project the input sequence into h different subspaces. Then, for each head i, we can compute the attention weights and output as follows:
 
 Query, Key, and Value projection:
-$q_i = XW_q^i$, where X is the input sequence of shape (batch_size, sequence_length, d_model)
+$q_i = XW_q^i$, where $X$ is the input sequence of shape (`batch_size`, `sequence_length`, `d_model`)
 $k_i = XW_k^i$
 $v_i = XW_v^i$
-Here, d_model is the dimensionality of the input sequence, which is assumed to be the same as $d_q$, $d_k$, and $d_v$.
+Here, `d_model` is the dimensionality of the input sequence, which is assumed to be the same as $d_q$, $d_k$, and $d_v$.
 Scaled Dot-Product Attention:
 $score_i = (q_i \cdot k_i^T) / \sqrt{d_k}$, where * denotes matrix multiplication and ^T denotes matrix transpose.
 $attention_i = softmax(score_i) \cdot v_i$, where softmax is applied along the sequence length dimension.
